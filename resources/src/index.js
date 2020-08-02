@@ -5,15 +5,14 @@ const forecast = document.getElementById('forecast');
 function fetchWeather(e) {
     e.preventDefault();
     const zip = document.querySelector("#search-term").value;
-    fetch(`http://dataservice.accuweather.com/locations/v1/postalcodes/search?apikey=w3Q9byYW6oHv4dTabIL0DO2v2gxqiYkC&q=${zip}&language=en-us`)
+    fetch(`https://pro.openweathermap.org/data/2.5/forecast/hourly?zip=${zip}&appid=b8d555814d3e396548e9371b2e5b9209`)
       .then(response => response.json())
-      .then(data =>
+      .then(data => {
         console.log(data)
     
           
-        // let output = `<h2>${zip}</h2>`;
-        // output += '<p>'
-        // output += `data[0].EnglishName`
+        // let output = `Forecast for ${data[0].EnglishName}, ${data[0].AdministrativeArea.ID} ${zip}`
+        
 
         // // output += '</p>'
         // output += `${data[0].fl}`
@@ -26,5 +25,5 @@ function fetchWeather(e) {
         // output += '<br>'
         // output += data[0].shortdef[2] ? `${data[0].shortdef[2]}` : ``
         // output += '</p>'
-        // document.getElementById("word-display").innerHTML = output;
-      )}
+        document.getElementById("forecast").innerHTML = output;
+        })}
