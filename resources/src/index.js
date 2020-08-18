@@ -12,7 +12,14 @@ function fetchWeather(e) {
 
       let currently = `${data.list[0].weather[0].description}`
       if (currently.includes("rain")) {
-        document.body.style.backgroundImage = 'url(./resources/images/maxresdefault.jpg)'
+        document.body.style.backgroundImage = 'url(https://static.vecteezy.com/system/resources/previews/000/617/305/non_2x/seamless-pattern-of-yellow-umbrella-with-drops-raining-on-blue-background-vector-illustration.jpg)';
+      } else if (currently.includes("cloud")) { 
+        document.body.style.backgroundImage = 'url(https://wallpaperaccess.com/full/2138694.jpg)';
+      } else if (currently.includes("snow")) {
+        document.body.style.backgroundImage = 'url(https://wallpaperaccess.com/full/367251.jpg)';
+      } else {
+        document.body.style.backgroundImage = hidden;
+      }
       let output = `Forecast for ${data.city.name}, ${zip}`
       let kelvin = Number(data.list[0].main.feels_like)
       const celsius = kelvin - 273;
@@ -30,9 +37,11 @@ function fetchWeather(e) {
       output += `Cloud Coverage: ${data.list[0].clouds.all}%`
       document.getElementById("forecast").innerHTML = output;
     }
+    )
   }
-)
-}
+//   }
+// )
+// }
 
 
 //   } else if (weatherinfo == Clouds) {

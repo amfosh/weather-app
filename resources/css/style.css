@@ -1,3 +1,16 @@
 body {
     margin: 20px;
+    font-family: 'Alata', sans-serif;
+}
+
+#wrapper {
+    background-color: aliceblue;
+    text-align: center;
+    width: 30vw;
+    padding: 50px;
+}
+
+#forecast {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
 }
