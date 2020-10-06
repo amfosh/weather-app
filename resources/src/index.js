@@ -17,8 +17,10 @@ function fetchWeather(e) {
         document.body.style.backgroundImage = 'url(https://wallpaperaccess.com/full/2138694.jpg)';
       } else if (currently.includes("snow")) {
         document.body.style.backgroundImage = 'url(https://wallpaperaccess.com/full/367251.jpg)';
+      } else if (currently.includes("clear")) {
+        document.body.style.backgroundImage = 'url(https://wallpapercave.com/wp/hq3wpho.jpg)';
       } else {
-        document.body.style.backgroundImage = hidden;
+        document.body.style.backgroundImage = '';
       }
       let output = `Forecast for ${data.city.name}, ${zip}`
       let kelvin = Number(data.list[0].main.feels_like)

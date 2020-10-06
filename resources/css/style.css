@@ -1,6 +1,9 @@
 body {
     margin: 20px;
     font-family: 'Alata', sans-serif;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 #wrapper {
@@ -13,4 +16,8 @@ body {
 #forecast {
     font-family: 'Montserrat', sans-serif;
     font-size: 14px;
+}
+
+li {
+    list-style: none;
 }
